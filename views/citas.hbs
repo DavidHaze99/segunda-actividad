@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Médico Backend - Listado de Citas</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Centro Médico Backend</h1>
+    </header>
+
+    <main>
+        <h2>Listado de Citas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha de Cita</th>
+                    <th>Paciente</th>
+                    <th>Teléfono del Paciente</th>
+                    <th>Especialidad</th>
+                    <th>Consultorio</th>
+                    <th>Médico</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each resultado}}
+                    <tr>
+                        <td>{{formatoFecha fecha_cita}}</td>
+                        <td>{{nombres}} {{apellidos}}</td>
+                        <td>{{telefono}}</td>
+                        <td>{{especialidad}}</td>
+                        <td>{{consultorio}}</td>
+                        <td>{{nombresMedico}} {{apellidosMedico}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        
+        <a href="../index.html">
+            <button>Volver</button>
+        </a>
+    </main>
+
+    <footer>
+        <h2>Realizado por:</h2>
+        <p>Grupo 1 Desarrollo Web Backend (Editado por David Pérez)</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Médico Backend - Agendamiento de Citas</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <header>
+        <h1>Centro Médico Backend</h1>
+    </header>
+
+    <main>
+        <h2>Agendamiento de Citas</h2>
+        <div class="container-form">
+            <form method="post" action="/agregar-cita">
+                <label for="cedula">Número de Cédula:</label>
+                <input type="number" id="cedula" name="cedula" required>
+
+                <label for="fecha_cita">Fecha de Cita Médica:</label>
+                <input type="date" id="fecha_cita" name="fecha_cita" required>
+
+                <label for="medico">Médico Especialista:</label>
+                <select name="medico" id="medico" required>
+                    <option value="">----------Seleccione una opción-----------</option>
+                    {{#each resultado}}
+                        <option value="{{cedula}}">{{nombres}} {{apellidos}}</option>
+                    {{/each}}
+                </select>
+
+                <input type="submit" value="Enviar">
+            </form>
+
+            <a href="../index.html">
+                <button>Volver</button>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <h2>Realizado por:</h2>
+        <p>Grupo 1 Desarrollo Web Backend (Editado por David Pérez)</p>
+    </footer>
+</body>
+</html>
